@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Modelo base de site responsivo" />
+  <title>Meu Site Responsivo</title>
+
+  <style>
+    /* ======= RESET ======= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #222;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: linear-gradient(90deg, #007aff, #00c3ff);
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      transition: 0.3s;
+    }
+
+    nav ul li:hover {
+      opacity: 0.8;
+    }
+
+    /* ======= MENU MOBILE ======= */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #007aff;
+        width: 200px;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        transition: height 0.3s ease;
+      }
+
+      nav ul.active {
+        height: 150px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    main {
+      padding: 100px 20px 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meu Site</h1>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div><div></div><div></div>
+    </div>
+    <nav>
+      <ul id="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>Bem-vindo ao meu site</h2>
+      <p>Este é um modelo básico e totalmente responsivo. Você pode personalizar cores, fontes e seções facilmente.</p>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <p>Adicione informações sobre você, sua empresa ou projeto aqui.</p>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <p>Liste seus principais serviços, produtos ou portfólio de forma organizada e visual.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Inclua suas redes sociais, formulário de contato ou informações de localização.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 — Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Script simples para o menu mobile
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('active'));
+  </script>
+</body>
+</html>
