@@ -136,48 +136,51 @@
         }
         .destaque{color: red;}
         
-  .tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    color: #0077cc;
-    font-weight: bold;
-  }
+        
+      
 
-  /* Caixa oculta por padrão */
-  .tooltip .tooltip-box {
-    visibility: hidden;
-    opacity: 0;
-    width: 200px;
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px;
-    position: absolute;
-    bottom: 125%; /* Acima da palavra */
-    left: 50%;
-    transform: translateX(-50%);
-    transition: opacity 0.3s;
-    z-index: 10;
-  }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      color: #0077cc;
+      font-weight: bold;
+    }
 
-  /* Triângulo da caixa */
-  .tooltip .tooltip-box::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #222 transparent transparent transparent;
-  }
+    .tooltip .tooltip-box {
+      visibility: hidden;
+      opacity: 0;
+      width: 220px;
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
 
-  /* Mostrar ao passar o mouse */
-  .tooltip:hover .tooltip-box {
-    visibility: visible;
-    opacity: 1;
+    .tooltip .tooltip-box::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #222 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltip-box {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+  
     </style>
 </head>
 
