@@ -135,6 +135,49 @@
             font-size: 0.9rem;
         }
         .destaque{color: red;}
+        
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #0077cc;
+    font-weight: bold;
+  }
+
+  /* Caixa oculta por padrão */
+  .tooltip .tooltip-box {
+    visibility: hidden;
+    opacity: 0;
+    width: 200px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    bottom: 125%; /* Acima da palavra */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
+    z-index: 10;
+  }
+
+  /* Triângulo da caixa */
+  .tooltip .tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #222 transparent transparent transparent;
+  }
+
+  /* Mostrar ao passar o mouse */
+  .tooltip:hover .tooltip-box {
+    visibility: visible;
+    opacity: 1;
     </style>
 </head>
 
@@ -157,7 +200,8 @@
 <main>
     <section id="inicio">
         <h2>A Mensagem de Jeremias para Juda</h2>
-
+        
+      
         <p><strong>Texto principal:</strong> Ouvi a palavra do SENHOR, ó casa de Jacó e todas as famílias da casa de Israel.” (Jr 2.4)</p>
 
         <h3>Resumo da Lição</h3>
@@ -181,6 +225,8 @@
         </ul>
 
         <h3>Interação</h3>
+        
+      
         <p>Prezado (a) professor(a), no decorrer da aula enfatiza que o povo de Deus estava vivendo um período de grande
             apostasia, imerso na idolatria e por isso, a mensagem do profeta precisava ser contundente. Jeremias chamou
             a atenção do seu povo para os pecados que vinham cometendo, e dia após dia, com coragem e ousadia, os
@@ -241,7 +287,10 @@
         <h3>I – A Palavra Profética Enviada a Judá</h3>
         <p><strong>1- O ministério profético</strong> O termo profeta vem do hebraico <i class="destaque">nabi</i> e do grego <i class="destaque">prophetes</i> e,
             conjuntamente, referem-se à pessoa que recebia a autorização para falar em nome e em lugar de Deus (Ez
-            2.1-10). O ofício profético tem início com Samuel que, além de ser uma referência, foi também o fundador da
+            2.1-10). O ofício profético tem início com    <span class="tooltip">
+       <strong>Samuel</strong>
+       <span class="tooltip-box">Profeta - Primeiro Juiz levando por Deus</span>
+   </span> que, além de ser uma referência, foi também o fundador da
             chamada escola de profetas (1 Sm 19.20). O ofício profético se deu até João Batista, cuja missão principal
             foi a de realizar a transição deste período para o inaugurado por Cristo (Mt 11.11-15). Com um chamado
             específico e particular (Am 7.14.15), o profeta era separado exclusivamente para Deus, que o enviava com a
