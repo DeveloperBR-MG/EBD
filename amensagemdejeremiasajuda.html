@@ -136,9 +136,6 @@
         }
         .destaque{color: red;}
         
-        
-      
-
     .tooltip {
       position: relative;
       display: inline-block;
@@ -147,13 +144,14 @@
       font-weight: bold;
     }
 
+    /* Caixa padrão */
     .tooltip .tooltip-box {
       visibility: hidden;
       opacity: 0;
       width: 220px;
       background-color: #222;
       color: #fff;
-      text-align: center;
+      text-align: left;
       border-radius: 6px;
       padding: 8px;
       position: absolute;
@@ -162,6 +160,19 @@
       transform: translateX(-50%);
       transition: opacity 0.3s ease;
       z-index: 10;
+
+      /* Se o conteúdo for maior que 100px, aparece scroll */
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .tooltip .tooltip-box::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .tooltip .tooltip-box::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 3px;
     }
 
     .tooltip .tooltip-box::after {
@@ -179,6 +190,7 @@
       visibility: visible;
       opacity: 1;
     }
+  
 .linha {
     border-bottom: 2px dashed #00aaff;
 }
