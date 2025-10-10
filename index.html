@@ -8,13 +8,12 @@
     <style>
         :root {
             --bg: #f7f9fb;
+            --card: #ffffff;
             --accent: #0b6efd;
             --muted: #6b7280;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
@@ -35,22 +34,21 @@
             padding: 1rem;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 1.4rem;
-        }
+        h1 { margin: 0; font-size: 1.4rem; }
 
-        /* Layout “invisível” de duas colunas */
-        .content {
+        /* CAIXA ÚNICA PARA SUMÁRIO + IMAGEM */
+        .card {
             display: flex;
             flex-wrap: wrap;
-            align-items: flex-start;
+            background: var(--card);
+            border-radius: 12px;
+            box-shadow: 0 1px 6px rgba(2,6,23,0.06);
+            padding: 1.5rem;
             gap: 1.5rem;
-            margin-top: 1rem;
         }
 
         nav {
-            flex: 1 1 300px; /* sumário ocupa pelo menos 300px */
+            flex: 1 1 300px; /* ocupa espaço mínimo */
         }
 
         nav h2 {
@@ -64,9 +62,7 @@
             margin: 0;
         }
 
-        ul.toc li {
-            margin: 0.35rem 0;
-        }
+        ul.toc li { margin: 0.35rem 0; }
 
         ul.toc a {
             display: block;
@@ -81,9 +77,8 @@
             color: var(--accent);
         }
 
-        /* imagem à direita, sem bordas ou caixas */
         .image-box {
-            flex: 0 0 400px; /* largura fixa */
+            flex: 0 0 400px; /* largura fixa da imagem */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -102,11 +97,10 @@
             font-size: 0.9rem;
         }
 
-        /* Responsivo: em telas pequenas a imagem vai para baixo */
+        /* RESPONSIVO */
         @media (max-width: 640px) {
-            .content {
+            .card {
                 flex-direction: column;
-                gap: 1rem;
             }
 
             .image-box {
@@ -120,18 +114,20 @@
 <header>
     <div class="container">
         <h1>Lições Bíblicas — Sumário</h1>
-        <p style="margin:.4rem 0 0;color:var(--muted)">Clique em qualquer lição no sumário abaixo para abrir em nova página.</p>
+        <p style="margin:.4rem 0 0;color:var(--muted)">
+            Clique em qualquer lição no sumário abaixo para abrir em nova página.
+        </p>
     </div>
 </header>
 
 <div class="container">
-    <div class="content">
+    <div class="card">
         <!-- SUMÁRIO -->
         <nav aria-label="Sumário de lições">
             <h2>Sumário</h2>
             <ul class="toc">
                 <li><a href="ochamadodejeremias.html" >O Chamado De Jeremias</a></li>
-                <li><a href="amensagemdejeremiasajuda.html">A Mensagem de Jeremias para Judá</a></li>
+                <li><a href="amensagemdejeremiasajuda.html" >A Mensagem de Jeremias para Judá</a></li>
                 <li><a href="lesson-2.html" >Lição 2 — Queda e Redenção</a></li>
                 <li><a href="lesson-3.html" target="_blank">Lição 3 — Vida de Jesus</a></li>
                 <li><a href="lesson-4.html" target="_blank">Lição 4 — Parábolas e Ensinamentos</a></li>
@@ -144,13 +140,13 @@
 
         <!-- IMAGEM -->
         <div class="image-box">
-            <img src="image-1.png" alt="Imagem representando a revista do trimestre">
+            <img src="image-1.png" alt="Imagem representando a lição do trimestre">
         </div>
     </div>
 </div>
 
 <footer class="container">
-    <p>Lições EBD -  Cada lição abre em uma nova página.</p>
+    <p>Liçoes Biblicas —  Cada lição abre em uma nova página.</p>
 </footer>
 </body>
 </html>
