@@ -135,61 +135,63 @@
             font-size: 0.9rem;
         }
         .destaque{color: red;}
-        
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      color: #0077cc;
-      font-weight: bold;
-    }
 
-    /* Caixa padrão */
-    .tooltip .tooltip-box {
-      visibility: hidden;
-      opacity: 0;
-      width: 220px;
-      background-color: #222;
-      color: #fff;
-      text-align: left;
-      border-radius: 6px;
-      padding: 8px;
-      position: absolute;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: opacity 0.3s ease;
-      z-index: 10;
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
 
-      /* Se o conteúdo for maior que 100px, aparece scroll */
-      max-height: 200px;
-      overflow-y: auto;
-    }
+        .tooltip-trigger {
+            cursor: pointer;
+            color: #0077cc;
+            font-weight: bold;
+        }
 
-    .tooltip .tooltip-box::-webkit-scrollbar {
-      width: 6px;
-    }
+        .tooltip-box {
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            background-color: #222;
+            color: #fff;
+            border-radius: 6px;
+            padding: 8px;
+            text-align: left;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
 
-    .tooltip .tooltip-box::-webkit-scrollbar-thumb {
-      background: #555;
-      border-radius: 3px;
-    }
+            /* frame se for alto */
+            max-height: 100px;
+            overflow-y: auto;
+        }
 
-    .tooltip .tooltip-box::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #222 transparent transparent transparent;
-    }
+        .tooltip-box::-webkit-scrollbar {
+            width: 6px;
+        }
+        .tooltip-box::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 3px;
+        }
 
-    .tooltip:hover .tooltip-box {
-      visibility: visible;
-      opacity: 1;
-    }
+        .tooltip-box::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #222 transparent transparent transparent;
+        }
+
+        /* Mantém visível enquanto o mouse está na palavra OU no balão */
+        .tooltip-container:hover .tooltip-box {
+            visibility: visible;
+            opacity: 1;
+        }
   
 .linha {
     border-bottom: 2px dashed #00aaff;
