@@ -1,13 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Modelo base de site responsivo" />
-    <title>A mensagem de Jeremias a Judá</title>
-
-    <style>
-        * {
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Modelo base de site responsivo" name="description"/>
+<title>A mensagem de Jeremias a Judá</title>
+<style>* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -102,7 +101,7 @@
             background: white;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
@@ -134,196 +133,163 @@
             color: #aaa;
             font-size: 0.9rem;
         }
-        .destaque{color: red;}
 
-        .tooltip-container {
-            position: relative;
-            display: inline-block;
+        .destaque {
+            color: red;
         }
 
-        .tooltip-trigger {
-            cursor: pointer;
-            color: #0077cc;
-            font-weight: bold;
-        }
-
-        .tooltip-box {
-            position: absolute;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 220px;
-            background-color: #222;
-            color: #fff;
-            border-radius: 6px;
-            padding: 8px;
-            text-align: left;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-
-            /* frame se for alto */
-            max-height: 100px;
-            overflow-y: auto;
-        }
-
-        .tooltip-box::-webkit-scrollbar {
-            width: 6px;
-        }
-        .tooltip-box::-webkit-scrollbar-thumb {
-            background: #555;
-            border-radius: 3px;
-        }
-
-        .tooltip-box::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #222 transparent transparent transparent;
-        }
-
-        /* Mantém visível enquanto o mouse está na palavra OU no balão */
-        .tooltip-container:hover .tooltip-box {
-            visibility: visible;
-            opacity: 1;
-        }
-  
-.linha {
-    border-bottom: 2px dashed #00aaff;
+/* ===== Tooltip corrigido ===== */
+.tooltip {
+  position: relative;
+  display: inline-block;
 }
-  </style>
-  
-    </style>
-</head>
 
+.tooltip .tooltip-trigger {
+  cursor: pointer;
+  color: #0077cc;
+  font-weight: bold;
+  border-bottom: 2px dashed #00aaff;
+}
+
+.tooltip .tooltip-box {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.tooltip .tooltip-box::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(20, 20, 20, 0.95) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-box,
+.tooltip .tooltip-box:hover {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-3px);
+}
+</style>
+</head>
 <body>
 <header>
-    <h1>Lição 2 - A mensagem de Jeremias</h1>
-    <div class="menu-toggle" id="menu-toggle">
-        <div></div><div></div><div></div>
-    </div>
-    <nav>
-        <ul id="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+<h1>Lição 2 - A mensagem de Jeremias</h1>
+<div class="menu-toggle" id="menu-toggle">
+<div></div><div></div><div></div>
+</div>
+<nav>
+<ul id="menu">
+<li><a href="index.html">Início</a></li>
+<li><a href="">Sobre</a></li>
+<li><a href="">Serviços</a></li>
+<li><a href="">Contato</a></li>
+</ul>
+</nav>
 </header>
-
 <main>
-    <section id="inicio">
-        <h2>A Mensagem de Jeremias para Juda</h2>
-        
-      
-        <p><strong>Texto principal:</strong> Ouvi a palavra do SENHOR, ó casa de Jacó e todas as famílias da casa de Israel.” (Jr 2.4)</p>
-
-        <h3>Resumo da Lição</h3>
-        <p>Jeremias chama Judá ao arrependimento e alerta sobre a disciplina que receberia como fruto da desobediência e afastamento de Deus. </p>
-
-        <h3>Leitura Semanal</h3>
-        <ul>
-            <li><strong>Segunda:</strong> Dt 32.7-12 Deus santificou Israel</li>
-            <li><strong>Terça:</strong>  Ez 18.1-32 Deus insiste no arrependimento de seu povo</li>
-            <li><strong>Quarta:</strong> Pv 3.11-12 A correção de Deus</li>
-            <li><strong>Quinta:</strong> 2 Rs 24.1-20 A desobediência de Judá</li>
-            <li><strong>Sexta:</strong>  Lm 3.25 Deus é bom para os que o buscam</li>
-            <li><strong>Sábado:</strong> Lc 15.1-32 O Senhor e o arrependimento de seu povo</li>
-        </ul>
-
-        <h3>Objetivos</h3>
-        <ul>
-            <li>Apresentar a palavra profética enviada a Judá por intermédio de Jeremias;</li>
-            <li>Explicar a dura advertência divina a Judá;</li>
-            <li>Destacar o chamado ao arrependimento anunciado por Jeremias.</li>
-        </ul>
-
-        <h3>Interação</h3>
-        
-      
-        <p>Prezado (a) professor(a), no decorrer da aula enfatiza que o povo de Deus estava vivendo um período de grande
+<section id="inicio">
+<h2>A Mensagem de Jeremias para Juda</h2>
+<p><strong>Texto principal:</strong> Ouvi a palavra do SENHOR, ó casa de Jacó e todas as famílias da casa de Israel.” (Jr 2.4)</p>
+<h3>Resumo da Lição</h3>
+<p>Jeremias chama Judá ao arrependimento e alerta sobre a disciplina que receberia como fruto da desobediência e afastamento de Deus. </p>
+<h3>Leitura Semanal</h3>
+<ul>
+<li><strong>Segunda:</strong> Dt 32.7-12 Deus santificou Israel</li>
+<li><strong>Terça:</strong>  Ez 18.1-32 Deus insiste no arrependimento de seu povo</li>
+<li><strong>Quarta:</strong> Pv 3.11-12 A correção de Deus</li>
+<li><strong>Quinta:</strong> 2 Rs 24.1-20 A desobediência de Judá</li>
+<li><strong>Sexta:</strong>  Lm 3.25 Deus é bom para os que o buscam</li>
+<li><strong>Sábado:</strong> Lc 15.1-32 O Senhor e o arrependimento de seu povo</li>
+</ul>
+<h3>Objetivos</h3>
+<ul>
+<li>Apresentar a palavra profética enviada a Judá por intermédio de Jeremias;</li>
+<li>Explicar a dura advertência divina a Judá;</li>
+<li>Destacar o chamado ao arrependimento anunciado por Jeremias.</li>
+</ul>
+<h3>Interação</h3>
+<p>Prezado (a) professor(a), no decorrer da aula enfatiza que o povo de Deus estava vivendo um período de grande
             apostasia, imerso na idolatria e por isso, a mensagem do profeta precisava ser contundente. Jeremias chamou
             a atenção do seu povo para os pecados que vinham cometendo, e dia após dia, com coragem e ousadia, os
             confrontava com as consequências de seus pecados a fim de que se arrependesse e voltasse para Deus. Contudo,
             o povo não deu ouvidos às exortações do profeta (Jr 25.3). Deus amava seu povo, e esse era o motivo pelo
             qual iria discipliná-lo. Só havia uma saída capaz de fazer com que Judá escapasse do juízo iminente:o <mark> arrependimento sincero.</mark> Todavia, não aceitaram a correção e continuaram pecando de modo deliberado contra
             Deus.</p>
-
-        <h3>Orientação Pedagógica</h3>
-        <p>Reproduza a tabela abaixo. Utilize-a para mostrar aos alunos, de modo resumido, o ambiente da época, a
+<h3>Orientação Pedagógica</h3>
+<p>Reproduza a tabela abaixo. Utilize-a para mostrar aos alunos, de modo resumido, o ambiente da época, a
             mensagem principal de Jeremias e a importância de sua mensagem.</p>
-
-        <h3>AMBIENTE DA ÉPOCA</h3>
-        <p> A sociedade estava se deteriorando econômica, política e espiritualmente.</p>
-        <p>As guerras dominavam o cenário mundial</p>
-        <p>A Palavra de Deus era considerada ofensiva</p>
-        <p>MENSAGEM PRINCIPAL</p>
-        <p> O arrependimento adiaria o iminente juízo de Judá executado pelas “mãos” da Babilônia.</p>
-        <p>IMPORTÂNCIA DA MENSAGEM</p>
-        <p>O arrependimento é uma das maiores necessidades em nosso mundo imoral As promessas de Deus para aqueles que
+<h3>AMBIENTE DA ÉPOCA</h3>
+<p> A sociedade estava se deteriorando econômica, política e espiritualmente.</p>
+<p>As guerras dominavam o cenário mundial</p>
+<p>A Palavra de Deus era considerada ofensiva</p>
+<p>MENSAGEM PRINCIPAL</p>
+<p> O arrependimento adiaria o iminente juízo de Judá executado pelas “mãos” da Babilônia.</p>
+<p>IMPORTÂNCIA DA MENSAGEM</p>
+<p>O arrependimento é uma das maiores necessidades em nosso mundo imoral As promessas de Deus para aqueles que
             são fiéis brilham vigorosamente, trazendo esperança para o amanhã e forças para hoje. (Adaptado do Bíblico
             de Estudo Aplicação Pessoal, CPAD, p, 959.)</p>
-
-        <h3>Jeremias, o Profeta das Lágrimas</h3>
-        <ul>
-            <li><strong>Cidade natal:</strong> Anatote</li>
-            <li><strong>Filiação:</strong> Filho de Hilquias, sacerdote em Anatote</li>
-            <li><strong>Reis contemporâneos:</strong> Josias, Jeoaquim e Zedequias</li>
-            <li><strong>Destinatários:</strong> Judá e Jerusalém</li>
-            <li><strong>Lugares-chave:</strong> Anatote, Jerusalém, Ramá e Egito</li>
-            <li><strong>Dores e sofrimentos:</strong> Prisão, cisterna, rejeição por família, vizinhos, sacerdotes e reis.</li>
-        </ul>
-
-        <h3>Texto Bíblico</h3>
-        <p>Jeremias 2.5-13</p>
-        <p>5 Assim diz o SENHOR: Que injustiça acharam vossos pais em mim, para se afastarem de mim, indo após a vaidade e
+<h3>Jeremias, o Profeta das Lágrimas</h3>
+<ul>
+<li><strong>Cidade natal:</strong> Anatote</li>
+<li><strong>Filiação:</strong> Filho de Hilquias, sacerdote em Anatote</li>
+<li><strong>Reis contemporâneos:</strong> Josias, Jeoaquim e Zedequias</li>
+<li><strong>Destinatários:</strong> Judá e Jerusalém</li>
+<li><strong>Lugares-chave:</strong> Anatote, Jerusalém, Ramá e Egito</li>
+<li><strong>Dores e sofrimentos:</strong> Prisão, cisterna, rejeição por família, vizinhos, sacerdotes e reis.</li>
+</ul>
+<h3>Texto Bíblico</h3>
+<p>Jeremias 2.5-13</p>
+<p>5 Assim diz o SENHOR: Que injustiça acharam vossos pais em mim, para se afastarem de mim, indo após a vaidade e
             tornando-se levianos?</p>
-        <p>6 E não disseram: Onde está o SENHOR. que nos fez subir da terra do Egito? Que nos guiou através do deserto por
-        uma terra de ermos e de covas, por uma terra de sequidão e sombra de morte, por uma terra em que ninguém
+<p>6 E não disseram: Onde está o SENHOR. que nos fez subir da terra do Egito? Que nos guiou através do deserto por
+            uma terra de ermos e de covas, por uma terra de sequidão e sombra de morte, por uma terra em que ninguém
             transitava e na qual não morava homem algum.</p>
-       <p>7 E eu vos introduzi numa terra fértil, para comerdes os seus frutos e o seu bem; mas, quando nela entrastes,
-        contaminantes a minha terra e da minha herança fizestes uma abominação.</p>
-       <p> 8 Os sacerdotes não disseram: onde está O SENHOR? E os que tratavam da lei não me conheciam, e os pastores
-           prevaricaram contra mim, e os profetas profetizaram por Baal e andaram após o que é de nenhum proveito.</p>
-        <p>9 Portanto, ainda pleitearei convosco. diz o SENHOR; e até com os filhos de vossos filhos pleitearei.</p>
-        <p>10 Porquanto, passai às linhas de Quitim e vede; e enviai a Quedar, e atentai bem, e vede se sucedeu coisa
+<p>7 E eu vos introduzi numa terra fértil, para comerdes os seus frutos e o seu bem; mas, quando nela entrastes,
+            contaminantes a minha terra e da minha herança fizestes uma abominação.</p>
+<p> 8 Os sacerdotes não disseram: onde está O SENHOR? E os que tratavam da lei não me conheciam, e os pastores
+            prevaricaram contra mim, e os profetas profetizaram por Baal e andaram após o que é de nenhum proveito.</p>
+<p>9 Portanto, ainda pleitearei convosco. diz o SENHOR; e até com os filhos de vossos filhos pleitearei.</p>
+<p>10 Porquanto, passai às linhas de Quitim e vede; e enviai a Quedar, e atentai bem, e vede se sucedeu coisa
             semelhante.</p>
-        <p>11 Houve alguma nação que trocasse os seus deuses, posto não serem deuses? Todavia, o meu povo trocou a sua
+<p>11 Houve alguma nação que trocasse os seus deuses, posto não serem deuses? Todavia, o meu povo trocou a sua
             glória pelo que é de nenhum proveito.</p>
-        <p>12 Espantai-vos disto, ó céus, e horrorizai-vos! Ficai verdadeiramente desolados, diz o SENHOR.</p>
-       <p>13 Porque o meu povo fez duas maldades: a mim me deixaram, o manancial de águas vivas, e cavaram cisternas,
-        <i>cisternas rotas, que não retém as águas.</i></p>
-        <h3>Introdução</h3>
-        <p>Nesta lição, faremos uma análise do foco principal da profecia de Jeremias: o arrependimento. Esse era o
+<p>12 Espantai-vos disto, ó céus, e horrorizai-vos! Ficai verdadeiramente desolados, diz o SENHOR.</p>
+<p>13 Porque o meu povo fez duas maldades: a mim me deixaram, o manancial de águas vivas, e cavaram cisternas,
+            <i>cisternas rotas, que não retém as águas.</i></p>
+<h3>Introdução</h3>
+<p>Nesta lição, faremos uma análise do foco principal da profecia de Jeremias: o arrependimento. Esse era o
             fundamento de sua mensagem. Ele alerta a respeito da iminente destruição de Jerusalém pela invasão da
             Babilônia. A invasão seria uma consequência da desobediência e apostasia do povo.</p>
-
-        <h3>I – A Palavra Profética Enviada a Judá</h3>
-        <p><strong>1- O ministério profético</strong> O termo profeta vem do hebraico <i class="destaque">nabi</i> e do grego <i class="destaque">prophetes</i> e,
-            conjuntamente, referem-se à pessoa que recebia a autorização para falar em nome e em lugar de Deus   (  <span class="tooltip">
-        <strong class="linha">Ez
-2.1-10</strong>
-        <span class="tooltip-box">“Ele me disse: ― Filho do homem, fique em pé, pois vou falar com você. Enquanto ele falava, o Espírito entrou em mim e me pôs em pé, e ouvi aquele que me falava. Ele disse: ― Filho do homem, vou enviar você aos israelitas, nação rebelde que se revoltou contra mim. Até hoje, eles e os seus antepassados têm se revoltado contra mim. O povo a quem vou enviar você é obstinado e rebelde. Diga‑lhe: “Assim diz o Soberano Senhor”. Quer aquela nação rebelde ouça, quer deixe de ouvir, porque são um povo rebelde, saberá que um profeta esteve no meio dela. E você, filho do homem, não tenha medo dessa gente nem das suas palavras. Não tenha medo, ainda que o cerquem espinheiros e você viva entre escorpiões. Não tenha medo do que disserem nem fique apavorado ao vê‑los, embora sejam uma nação rebelde. Você lhes falará as minhas palavras, quer ouçam, quer deixem de ouvir, pois são rebeldes. Mas você, filho do homem, ouça o que digo. Não seja rebelde como aquela nação; abra a boca e coma o que vou dar a você. Então, olhei e vi a mão de alguém estendida para mim. Nela estava o rolo de um livro, que ele desenrolou diante de mim. Em ambos os lados do rolo, estavam escritas palavras de lamento, pranto e ais.”‬</span>
-    </span>). O ofício profético tem início com    <span class="tooltip">
-       <strong class="linha">Samuel</strong>
-       <span class="tooltip-box">Profeta - Primeiro Juiz levando por Deus</span>
-   </span> que, além de ser uma referência, foi também o fundador da
-            chamada escola de profetas  (<span class="tooltip">
-     <strong class="linha">1 Sm 19.20</strong>
-     <span class="tooltip-box">“Então, Saul enviou alguns homens para capturá‑lo. Contudo, quando viram um grupo de profetas, dirigidos por Samuel, que estavam profetizando, o Espírito de Deus apoderou‑se dos mensageiros de Saul, e eles também profetizaram.”</span>
- </span>). O ofício profético se deu até João Batista, cuja missão principal
+<h3>I – A Palavra Profética Enviada a Judá</h3>
+<p><strong>1- O ministério profético</strong> O termo profeta vem do hebraico <i class="destaque">nabi</i> e do grego <i class="destaque">prophetes</i> e,
+            conjuntamente, referem-se à pessoa que recebia a autorização para falar em nome e em lugar de Deus   (  <span class="tooltip"><span class="tooltip-trigger">Ez
+2.1-10</span><span class="tooltip-box">“Ele me disse: ― Filho do homem, fique em pé, pois vou falar com você. Enquanto ele falava, o Espírito entrou em mim e me pôs em pé, e ouvi aquele que me falava. Ele disse: ― Filho do homem, vou enviar você aos israelitas, nação rebelde que se revoltou contra mim. Até hoje, eles e os seus antepassados têm se revoltado contra mim. O povo a quem vou enviar você é obstinado e rebelde. Diga‑lhe: “Assim diz o Soberano Senhor”. Quer aquela nação rebelde ouça, quer deixe de ouvir, porque são um povo rebelde, saberá que um profeta esteve no meio dela. E você, filho do homem, não tenha medo dessa gente nem das suas palavras. Não tenha medo, ainda que o cerquem espinheiros e você viva entre escorpiões. Não tenha medo do que disserem nem fique apavorado ao vê‑los, embora sejam uma nação rebelde. Você lhes falará as minhas palavras, quer ouçam, quer deixem de ouvir, pois são rebeldes. Mas você, filho do homem, ouça o que digo. Não seja rebelde como aquela nação; abra a boca e coma o que vou dar a você. Então, olhei e vi a mão de alguém estendida para mim. Nela estava o rolo de um livro, que ele desenrolou diante de mim. Em ambos os lados do rolo, estavam escritas palavras de lamento, pranto e ais.”‬</span></span>). O ofício profético tem início com    <span class="tooltip"><span class="tooltip-trigger">Samuel</span><span class="tooltip-box">Profeta - Primeiro Juiz levando por Deus</span></span> que, além de ser uma referência, foi também o fundador da
+            chamada escola de profetas  (<span class="tooltip"><span class="tooltip-trigger">1 Sm 19.20</span><span class="tooltip-box">“Então, Saul enviou alguns homens para capturá‑lo. Contudo, quando viram um grupo de profetas, dirigidos por Samuel, que estavam profetizando, o Espírito de Deus apoderou‑se dos mensageiros de Saul, e eles também profetizaram.”</span></span>). O ofício profético se deu até João Batista, cuja missão principal
             foi a de realizar a transição deste período para o inaugurado por  Cristo (Mt 11.11-15). Com um chamado
             específico e particular (Am 7.14.15), o profeta era separado exclusivamente para Deus, que o enviava com a
             missão de tornar sua vontade conhecida de seu povo, razão pela qual era também conhecido como “homem de
             Deus” (1 Sm 2.27: 9.6; 1 Rs 13.1).</p>
-        <h3></h3>
-        <p><strong>A natureza profética da mensagem de Jeremias.</strong> Como resposta ao chamado divino, Jeremias é
+<h3></h3>
+<p><strong>A natureza profética da mensagem de Jeremias.</strong> Como resposta ao chamado divino, Jeremias é
             visto entregando uma mensagem de exortação a Judá (2-3). Após a experiência de seu chamado. Jeremias recebeu
             a ordem para que deixasse a sua cidade (Anatote) e fosse a Jerusalém com a finalidade de proclamar a
             mensagem divina (Jr 2.1-3.5). Por meio da profecia entregue por Jeremias, Deus reafirmou a sua fidelidade, o
@@ -332,8 +298,8 @@
             toda a mensagem, a fim de que Ele seja exaltado e honrado. A mensagem deve atender aos interesses de Deus e
             não do profeta.
         </p>
-        <h3></h3>
-        <p><strong>3- Judá, o alvo de Deus. </strong>Por volta do ano 931 a.C., com a ascensão de Roboão ao reinado,
+<h3></h3>
+<p><strong>3- Judá, o alvo de Deus. </strong>Por volta do ano 931 a.C., com a ascensão de Roboão ao reinado,
             ocorreu a triste divisão de Israel em dois reinos: Reino do Norte, com capital em Siquém, posteriormente
             substituída por Samaria e Reino do Sul, com capital em Jerusalém. Estes dois reinos guerrearam entre si por
             cerca de 60 anos (1 Rs 14.30; 15.7.16), embora no período do reinado de Acabe e Josafá houvesse paz,
@@ -344,13 +310,12 @@
             advertindo sobre a sua queda, fato que ocorreu em 586 a.C. quando, de um reino, Judá passou a ser uma
             simples província.
         </p>
-        <h3></h3>
-        <p><strong>PENSE!</strong> Qual a natureza e o propósito da vida e do ministério de Jeremias? </p>
-
-        <p><strong>PONTO IMPORTANTE!</strong>Deus foi a fonte da vida de Jeremias e o seu ministério foi o cumprimento de seu
+<h3></h3>
+<p><strong>PENSE!</strong> Qual a natureza e o propósito da vida e do ministério de Jeremias? </p>
+<p><strong>PONTO IMPORTANTE!</strong>Deus foi a fonte da vida de Jeremias e o seu ministério foi o cumprimento de seu
             propósito.</p>
-        <h3>II – A Dura Advertência Divina</h3>
-        <p><strong>1- A ira de Deus.</strong> Desde que foi chamado por Deus, Jeremias esteve ciente de que, se por um lado
+<h3>II – A Dura Advertência Divina</h3>
+<p><strong>1- A ira de Deus.</strong> Desde que foi chamado por Deus, Jeremias esteve ciente de que, se por um lado
             a sua mensagem seria de esperança, por outro, ela seria de advertência e de exortação a um povo que havia
             escolhido afastar-se de Deus (2.13). O ministério de Jeremias revela a reação de Deus à forma com que o seu
             povo o tratava naqueles dias, motivo que acendeu a sua ira e Ele prometeu tratá-los segundo as suas obras
@@ -359,16 +324,16 @@
             mas sim advertir do erro, trazendo arrependimento e mudança de vida, pois o seu prazer é que a sua bondade
             seja experimentada, pois seus pensamentos são de paz e não de mal para com os seus (3.12.13; 29.11-13).
         </p>
-        <br>
-        <p><strong>2- Uma palavra de condenação.</strong> De acordo com os textos dos capítulos 2 e 3 do livro de Jeremias, o profeta
+<br/>
+<p><strong>2- Uma palavra de condenação.</strong> De acordo com os textos dos capítulos 2 e 3 do livro de Jeremias, o profeta
             recebeu a mensagem de Deus, cujo conteúdo foi de condenação, num período no qual o povo de Judá se afastou
             do Senhor. A mensagem entregue a Jeremias é uma forte acusação contra Judá, que à semelhança de uma esposa
             infiel, traiu o seu Deus (3.1-3). A mensagem foi transmitida com vivido sentimento de angústia que,
             inquestionavelmente, retrata o sentimento do próprio Deus diante da indiferença do seu povo. Daí, então, o
             aviso divino de que castigaria Judá (2.18.19).
         </p>
-       <br>
-        <p><strong>3- As causas da condenação.</strong> Inicialmente, é preciso afirmar que Deus não tem prazer em fazer o homem padecer
+<br/>
+<p><strong>3- As causas da condenação.</strong> Inicialmente, é preciso afirmar que Deus não tem prazer em fazer o homem padecer
             ou sofrer (Lm 3.33). Por outro lado, o Senhor não hesita em corrigir o seu povo, inclusive pelo sofrimento,
             por enveredar por caminhos tortuosos e contrários à sua Palavra. Não há condenação divina sem causa. A
             idolatria foi a principal razão da condenação anunciada por Jeremias (3.6-8). Mas também houve um longo
@@ -376,10 +341,8 @@
             deuses falsos e esta foi a queda final e fatal de uma longa desconstrução de princípios e valores
             espirituais, atitudes que causaram a indignação divina e consequentemente a condenação de Judá (2.10.11).
         </p>
-
-
-        <h3>III UM CHAMADO AO ARREPENDIMENTO</h3>
-        <p><strong>1- O que é arrependimento?</strong> O chamado ao arrependimento foi uma das tônicas principais da mensagem de
+<h3>III UM CHAMADO AO ARREPENDIMENTO</h3>
+<p><strong>1- O que é arrependimento?</strong> O chamado ao arrependimento foi uma das tônicas principais da mensagem de
             Jeremias, conforme se observa nas expressões “volta”, “reconhece” e “convertei-vos” (3.12-14). O termo
             arrependimento vem do grego <i class="destaque">metanoia</i>, isto é, mudança de mente. No Antigo Testamento, o vocábulo <i class="destaque">nihan</i>, que
             é o ato de arrepender-se, está em concordância com as palavras gregas <i class="destaque">metanoia</i> e <i class="destaque">apostropho</i>, apontando para
@@ -391,8 +354,8 @@
             um profeta que demonstrou amor genuíno pelo seu povo, mesmo que este não o tenha dado ouvido às suas
             mensagens a si mesmo para viver para Deus.
         </p>
-        <br>
-        <p><strong>2- Arrependimento, o caminho da restauração.</strong> Na prática, arrepender-se é mudar de opinião, de posição e de
+<br/>
+<p><strong>2- Arrependimento, o caminho da restauração.</strong> Na prática, arrepender-se é mudar de opinião, de posição e de
             comportamento. A pessoa arrependida experimenta uma mudança radical de pensamentos e atitudes. Judá havia se
             esquecido das obras gloriosas operadas pelo Senhor ao longo da história, como demonstração do seu cuidado
             (2.5-7). Por isso, o povo foi confrontado diante de sua ingratidão e apostasia (2.8-13; 3.6-11). Jeremias
@@ -400,8 +363,8 @@
             comunhão com Deus fosse restaurada (3.14); (c) recebesse líderes segundo o coração de Deus (3.15) e (d) a
             presença de Deus fosse constante entre o seu povo (3.16-18). O arrependimento é o caminho da restauração.
         </p>
-        <br>
-        <p><strong>3- A necessidade permanente de arrependimento. </strong>O profeta que fez a transição do Antigo Testamento para o Novo
+<br/>
+<p><strong>3- A necessidade permanente de arrependimento. </strong>O profeta que fez a transição do Antigo Testamento para o Novo
             foi João Batista. Semelhante a Jeremias, sua principal mensagem foi: “Arrependei-vos, porque é chegado o
             Reino dos céus” (Mt 3.2). Jesus também pregou a Palavra de Deus dizendo: Arrependei-vos, porque é chegado o
             Reino dos céus” (Mt 4.17). Pedro também, no Dia de Pentecostes, pregou dizendo: “Arrependei-vos e cada um de
@@ -413,41 +376,69 @@
             uma necessidade dos dias de Jeremias apenas, mas também nos dias de Jesus e dos apóstolos, assim como ainda
             é na atualidade.
         </p>
-        <h3></h3>
-        <p><strong>PENSE!</strong> Oque é arrependimento </p>
-        <br>
-        <p><strong>PONTO IMPORTANTE!</strong> Arrepender-se é deixar o que for necessário para ir em direção a Deus, o
+<h3></h3>
+<p><strong>PENSE!</strong> Oque é arrependimento </p>
+<br/>
+<p><strong>PONTO IMPORTANTE!</strong> Arrepender-se é deixar o que for necessário para ir em direção a Deus, o
             que resultará em restauração.
         </p>
-
-        <h3>Conclusão</h3>
-        <p>A necessidade da entrega de uma mensagem divina justificava a existência de um profeta e o exercício de seu
+<h3>Conclusão</h3>
+<p>A necessidade da entrega de uma mensagem divina justificava a existência de um profeta e o exercício de seu
             ministério. Com base nos capítulos 2 e 3 de Jeremias, esta lição pontuou esta verdade a partir da dura
             mensagem que o profeta entregou ao povo de Judá, deixando o exemplo e a lição de que, ainda hoje, o
             arrependimento é sempre o caminho para a restauração</p>
-
-        <h3>Hora da Revisão</h3>
-        <ol>
-            <li>Com quem o ofício profético tem início?</li>
-            <li>Segundo a lição, qual foi a missão principal de João Batista?</li>
-            <li>Jeremias era natural de qual cidade?</li>
-            <li>Na ascensão de qual rei ocorreu a divisão de Israel em dois reinos?</li>
-            <li>A ira de Deus é a manifestação de que?</li>
-        </ol>
-
-    </section>
-
-
+<h3>Hora da Revisão</h3>
+<ol>
+<li>Com quem o ofício profético tem início?</li>
+<li>Segundo a lição, qual foi a missão principal de João Batista?</li>
+<li>Jeremias era natural de qual cidade?</li>
+<li>Na ascensão de qual rei ocorreu a divisão de Israel em dois reinos?</li>
+<li>A ira de Deus é a manifestação de que?</li>
+</ol>
+</section>
 </main>
-
 <footer>
-    &copy; 2025 — Todos os direitos reservados.
+    © 2025 — Todos os direitos reservados.
 </footer>
-
 <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
     toggle.addEventListener('click', () => menu.classList.toggle('active'));
 </script>
 </body>
+<script>
+    document.querySelectorAll(".tooltip").forEach(tip => {
+        const box = tip.querySelector(".tooltip-box");
+        let hideTimeout;
+
+        tip.addEventListener("mouseenter", () => {
+            clearTimeout(hideTimeout);
+            box.style.visibility = "visible";
+            box.style.opacity = "1";
+            box.style.transform = "translateX(-50%) translateY(-3px)";
+        });
+
+        tip.addEventListener("mouseleave", () => {
+            hideTimeout = setTimeout(() => {
+                box.style.visibility = "hidden";
+                box.style.opacity = "0";
+                box.style.transform = "translateX(-50%) translateY(0)";
+            }, 300); // <- tempo de permanência em ms (pode ajustar)
+        });
+
+        box.addEventListener("mouseenter", () => {
+            clearTimeout(hideTimeout);
+            box.style.visibility = "visible";
+            box.style.opacity = "1";
+        });
+
+        box.addEventListener("mouseleave", () => {
+            hideTimeout = setTimeout(() => {
+                box.style.visibility = "hidden";
+                box.style.opacity = "0";
+            }, 200);
+        });
+    });
+</script>
+
 </html>
