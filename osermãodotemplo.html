@@ -1,0 +1,542 @@
+<!doctype html>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="Modelo base de site responsivo" name="description" />
+        <title>O sermão do Templo</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-align: justify;
+            }
+
+            body {
+                font-family: "Poppins", sans-serif;
+                color: #222;
+                background-color: #f9f9f9;
+                line-height: 1.6;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            header {
+                background: linear-gradient(90deg, #007aff, #00c3ff);
+                color: white;
+                padding: 15px 20px;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+                letter-spacing: 1px;
+            }
+           
+            nav ul {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+            }
+
+            nav ul li:hover {
+                opacity: 0.8;
+            }
+
+            .menu-toggle {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 5px;
+            }
+
+            .menu-toggle div {
+                width: 25px;
+                height: 3px;
+                background: white;
+            }
+
+            @media (max-width: 768px) {
+                nav ul {
+                    position: absolute;
+                    top: 60px;
+                    right: 0;
+                    background: #007aff;
+                    width: 200px;
+                    height: 0;
+                    overflow: hidden;
+                    flex-direction: column;
+                    align-items: center;
+                    transition: height 0.3s ease;
+                }
+
+                nav ul.active {
+                    height: 150px;
+                }
+
+                .menu-toggle {
+                    display: flex;
+                }
+            }
+
+            main {
+                padding: 100px 20px 60px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            section {
+                margin-bottom: 40px;
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                color: #007bff;
+                border-left: 5px solid #00b4ff;
+                padding-left: 10px;
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                margin-top: 20px;
+                color: #333;
+                font-size: 1.1rem;
+                text-align: center;
+                background-color: antiquewhite;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+
+            li {
+                margin-bottom: 5px;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px;
+                background: #222;
+                color: #aaa;
+                font-size: 0.9rem;
+            }
+
+            .destaque {
+                color: red;
+            }
+
+            /* ===== Tooltip corrigido ===== */
+            .tooltip {
+                position: relative;
+                display: inline-block;
+            }
+
+            .tooltip .tooltip-trigger {
+                cursor: pointer;
+                color: #0077cc;
+                border-bottom: 2px dashed #00aaff;
+            }
+
+            .tooltip .tooltip-box {
+                font-size: 0.8em;
+                position: absolute;
+                bottom: 125%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 340px;
+                background: rgba(20, 20, 20, 0.95);
+                color: #fff;
+                border-radius: 8px;
+                padding: 10px;
+                text-align: left;
+                visibility: hidden;
+                opacity: 0;
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.2s ease;
+                z-index: 100;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                max-height: 200px;
+                overflow-y: auto;
+            }
+
+            .tooltip .tooltip-box::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 6px;
+                border-style: solid;
+                border-color: rgba(20, 20, 20, 0.95) transparent transparent transparent;
+            }
+
+            .tooltip:hover .tooltip-box,
+            .tooltip .tooltip-box:hover {
+                visibility: visible;
+                opacity: 1;
+                transform: translateX(-50%) translateY(-3px);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Lição 3 - O sermão do Templo</h1>
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="">Sobre</a></li>
+                    <li><a href="">Serviços</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="inicio">
+                <h2>O sermão do Templo</h2>
+                <p>
+                    <strong>Texto principal:</strong> “Põe-te à porta da Casa do SENHOR, e proclama ali esta palavra, e
+                    dize: Ouvi a palavra do SENHOR, todos de Judá, vós os que entrais por estas portas, para adorardes
+                    ao SENHOR.” (Jr 7.2).
+                </p>
+                <h3>Resumo da Lição</h3>
+                <p>
+                    A justiça divina é reafirmada na exortação feita, tanto ao povo de Judá quanto à liderança política e religiosa. 
+                </p>
+                <h3>Leitura Semanal</h3>
+                <ul>
+                    <li><strong>Segunda:</strong> Jr 7.2O - O Sermão na porta do Templo</li>
+                    <li><strong>Terça:</strong> Jr 7.3 - Jeremias chama ao arrependimento</li>
+                    <li><strong>Quarta:</strong> Jr 7.4 - Jeremias combate as palavras falsas no Templo</li>
+                    <li><strong>Quinta:</strong>Jr 7.11 - Deus vê o que acontece no Templo</li>
+                    <li><strong>Sexta:</strong>Jr 7.12 - Jeremias adverte a respeito da justiça divina</li>
+                    <li><strong>Sábado:</strong> Jr 7.8 - Jeremias fala sobre confiar em palavras falsas</li>
+                </ul>
+                <h3>Objetivos</h3>
+                <ul>
+                    <li>COMPREENDER a importância da profecia de Jeremias na porta do Templo; </li>
+                    <li>EXPLICAR o que é uma vida espiritual bíblica; </li>
+                    <li>     DESTACAR as causas e as consequências de uma vida espiritual vazia.</li>
+                </ul>
+                <h3>Interação</h3>
+                <p>
+                    Prezado(a) professor(a), na aula deste domingo, vamos tratar a respeito do pronunciamento de
+                    Jeremias na porta do Templo. Veremos que o profeta fez um discurso de repreensão e exortação, pois o
+                    povo havia escolhido o caminho da perdição e da idolatria. O pecado e a cegueira espiritual eram
+                    tamanhos que não conseguiam mais ver o Templo como um lugar sagrado de adoração ao único Deus. O
+                    Templo tornou-se numa espécie de talismã, capaz de livrá-los de todo mal. Para completar o quadro
+                    funesto, os falsos profetas apregoavam que nada de ruim iria acontecer, afinal, Deus escolhera o
+                    Templo para sua morada na Terra (cf. Sl 132.13-16). Mas Jeremias, com muita ousadia e coragem,
+                    declara que não era o Templo que iria livrá-los do ataque do inimigo, mas sim, uma mudança radical
+                    de atitude.
+                </p>
+                <h3>Orientação Pedagógica</h3>
+                <p>
+                    Professor(a), converse com seus alunos explicando que “Deus dá ao seu povo uma nova oportunidade de
+                    se arrepender — de mudar de mente e atitude com relação a Ele, de se afastar de seus próprios maus
+                    caminhos e de retornar ao caminho de Deus para a vida. No entanto, o povo acreditava que estava tudo
+                    bem, simplesmente porque eles tinham o Templo e seguiam os seus rituais, e por essa razão eles não
+                    viam nenhuma necessidade de se arrependerem (v.4). Peça que um aluno leia Jeremias 7.3. Depois, diga
+                    que este versículo dá um exemplo da facilidade com que as pessoas podem ser enganadas pela religião
+                    (isto é, pelas tentativas humanas de se conectar com Deus ou satisfazê-lo) e terminam deixando de
+                    perceber a verdadeira oportunidade e necessidade de um relacionamento pessoal com Deus. Conclua
+                    enfatizando que o verdadeiro Cristianismo e o seguir a Jesus não são questões de religião, mas de
+                    relacionamento”. (Adaptado de Bíblia de Estudo Pentecostal para Jovens. Rio de Janeiro: CPAD, 2023,
+                    p.918).
+                </p>
+                
+               
+                <h3>Texto Bíblico</h3>
+                <p>Jeremias 7.1-15.</p>
+
+                <p>1 — A palavra que foi dita a Jeremias pelo SENHOR, dizendo:</p>
+
+                <p>
+                    2 — Põe-te à porta da Casa do SENHOR, e proclama ali esta palavra, e dize: Ouvi a palavra do SENHOR,
+                    todos de Judá, vós os que entrais por estas portas, para adorardes ao Senhor.
+                </p>
+
+                <p>
+                    3 — Assim diz o SENHOR dos Exércitos, o Deus de Israel: Melhorai os vossos caminhos e as vossas
+                    obras, e vos farei habitar neste lugar.
+                </p>
+                <p>
+                    4 — Não vos fieis em palavras falsas, dizendo: Templo do SENHOR, templo do Senhor, templo do Senhor
+                    é este.
+                </p>
+                <p>
+                    5 — Mas, se deveras melhorardes os vossos caminhos e as vossas obras, se deveras fizerdes juízo
+                    entre um homem e entre o seu companheiro,
+                </p>
+                <p>
+                    6 — se não oprimirdes o estrangeiro, e o órfão, e a viúva, nem derramardes sangue inocente neste
+                    lugar, nem andardes após outros deuses para vosso próprio mal,
+                </p>
+                <p>7 — eu vos farei habitar neste lugar, na terra que dei a vossos pais, de século em século.</p>
+                <p>8 — Eis que vós confiais em palavras falsas, que para nada são proveitosas.</p>
+                <p>
+                    9 — Furtareis vós, e matareis, e cometereis adultério, e jurareis falsamente, e queimareis incenso a
+                    Baal, e andareis após outros deuses que não conhecestes,
+                </p>
+                <p>
+                    10 — e então vireis, e vos poreis diante de mim nesta casa, que se chama pelo meu nome, e direis:
+                    Somos livres, podemos fazer todas estas abominações?
+                </p>
+                <p>
+                    11 — É, pois, esta casa, que se chama pelo meu nome, uma caverna de salteadores aos vossos olhos?
+                    Eis que eu, eu mesmo, vi isso, diz o Senhor.
+                </p>
+                <p>
+                    12 — Mas ide agora ao meu lugar, que estava em Siló, onde, no princípio, fiz habitar o meu nome, e
+                    vede o que lhe fiz por causa da maldade do meu povo de Israel.
+                </p>
+                <p>
+                    13 — Agora, pois, porquanto fazeis todas estas obras, diz o SENHOR, e eu vos falei, madrugando e
+                    falando, e não ouvistes, chamei-vos, e não respondestes,
+                </p>
+                <p>
+                    14 — farei também a esta casa, que se chama pelo meu nome, na qual confiais, e a este lugar, que vos
+                    dei a vós e a vossos pais, como fiz a Siló.
+                </p>
+                <p>
+                    15 — E vos arrojarei da minha presença, como arrojei a todos os vossos irmãos, a toda a geração de
+                    Efraim.
+                </p>
+                <h3>Introdução</h3>
+                <p>
+                    O capítulo 7 do livro de Jeremias registra a mensagem que ele transmitiu à porta do Templo em
+                    Jerusalém. Embora as pessoas continuassem a cumprir com as práticas litúrgicas do culto, o Senhor as
+                    reprovava. Na lição deste domingo, vamos discorrer a respeito do perigo da apostasia, da falsa
+                    adoração e do mal que uma vida cristã sem compromisso com a verdade de Deus é capaz de fazer. Este
+                    estudo é um alerta para a Igreja na atualidade. Ao ouvir a voz do Senhor, não endureça seu coração
+                    como fez o povo de Judá.
+                </p>
+                <h3>I – A VOZ NO TEMPLO</h3>
+                <p>
+                    <strong>1- Frequentadores do Templo</strong> Jeremias recebeu a missão de ir até Jerusalém,
+                    posicionar-se à porta do Templo e pôr-se a gritar, anunciando a mensagem a todos que por ali
+                    passassem (7.1,2). Provavelmente a cidade estava cheia de pessoas e o Templo extremamente
+                    concorrido. Contudo, é possível notar a ausência de reverência, de temor a Deus e a verdadeira
+                    adoração. A mensagem era de arrependimento e deveria ser proclamada aos frequentadores do Templo,
+                    pois estes estavam cumprindo com os rituais litúrgicos preestabelecidos, mas estavam com o coração
+                    distante de Deus (7.24). A adoração, a oração e os sacrifícios são válidos quando praticados em
+                    conformidade com a Palavra de Deus, em santidade e para Ele. Assim ecoou a voz de Deus no Templo.
+                </p>
+               <br>
+                  <p>
+                    <strong>2- O perigo da falsa adoração. </strong>A voz de Deus ecoou no Templo com uma mensagem clara
+                    de que o cumprimento de liturgias não é suficiente para agradá-lo. Não basta cantar, é preciso
+                    adorar a Deus em espírito e em verdade (Jo 4.23,24). A hipocrisia na adoração existe, e Jesus afirma
+                    que “em vão me adoraram” aqueles que o fazem dessa forma. Para Deus receber nossa adoração ela tem
+                    de ser legítima, “em espírito e em verdade”. O que implica em uma adoração sincera de um coração
+                    regenerado e voltado para o Senhor (Jo 4.23,24). Embora frequentasse o Templo e observasse os ritos
+                    do culto, o povo de Judá estava com o seu coração distante de Deus, contaminando o culto ao Senhor,
+                    atraindo assim a sua ira (7.17-20).
+                </p>
+                <br>
+                <p>
+                    <strong>3 - Siló, um triste exemplo. </strong>A mensagem de Jeremias afirmava que Deus faria a Judá
+                    o que havia feito a Siló (7.14). Em Siló ficava o Tabernáculo do Senhor, a Arca do Concerto e os
+                    sacerdotes que se enveredaram por caminhos tortuosos, atraindo a ira divina (1Sm 2.29,30). Estes
+                    sacerdotes confiaram na estrutura religiosa e não em Deus (1Sm 4.3-6) e o zelo religioso não impediu
+                    que Siló fosse destruída e nem a morte de Eli, de seus filhos e de sua nora (1Sm 4.1-22). Deixar
+                    Deus para confiar na estrutura religiosa foi o pecado do povo dos dias do sacerdote Eli, assim como
+                    do povo para o qual Jeremias profetizou. Por esse motivo, Deus utilizou-se do triste exemplo de Siló
+                    com a intenção de levar Judá a refletir, se arrepender e a desejar uma mudança.
+                </p>
+<br>
+                <h3>SUBSÍDIO I</h3>
+                
+                <p>
+                    “Era necessário uma coragem incomum para uma pessoa sensível como Jeremias proclamar uma mensagem
+                    tão devastadora. Ele involuntariamente começa a clamar em oração em favor da sua amada nação, mas
+                    Deus o proíbe de interceder: ‘Tu, pois, não ores por este povo, nem levantes por ele clamor ou
+                    oração’ (7.16). Deus ainda não tinha acabado com a sua acusação contra o seu povo e a revelação
+                    também não tinha terminado. ‘Não vês tu o que andam fazendo nas cidades de Judá e nas ruas de
+                    Jerusalém?’ (Jr 7.17). ‘Os filhos [...] os pais [...] as mulheres amassam a farinha, para fazerem
+                    bolos à deusa chamada Rainha dos Céus’ (Jr 7.18). O povo tinha se tornado completamente descarado em
+                    seu pecado, a ponto de estar oferecendo sacrifícios a outros deuses abertamente nas ruas. A Rainha
+                    dos Céus evidentemente refere-se a Ishtar, a deusa de um ritual de fertilidade babilônico que havia
+                    sido importada por Judá. Ela é mencionada aqui para indicar a profundidade do pecado em que o povo
+                    havia caído. O ponto a que o povo havia chegado marca o início do fim dessa nação. Deus declarou:
+                    ‘Es que a minha ira e o meu furor se derramarão sobre este lugar’; uma perversidade como essa não
+                    pode passar impune. Em seguida Jeremias ataca o uso errado do ritual religioso. Ele deixa claro que
+                    a cerimônia religiosa sem o conteúdo ético, é vazia. Se os sacrifícios não reforçavam ou fortaleciam
+                    a moralidade da nação, não tinham valor algum. Isso vale para todo ritualismo na religião. A menos
+                    que a cerimônia religiosa formal (ou informal) reforce a moralidade e o viver santo, ela é um
+                    esforço despendido em vão.” (Comentário Bíblico Beacon. Volume 4: Isaías a Daniel. Rio de Janeiro:
+                    CPAD, 2005, p.285).
+                </p>
+                <h3>II. A VIDA ESPIRITUAL BÍBLICA </h3>
+                <p>
+                    <strong>1. Definição. </strong> A palavra espiritualidade, vem do latim
+                    <i class="destaque">spitualitatem</i> e indica o ato de valorizar o que é espiritual. No que se
+                    refere a vida espiritual cristã, ela firma-se na experiência pessoal e real da pessoa com Cristo,
+                    influenciando-o na sua fé, no pensamento, na forma de enxergar a vida, nos seus relacionamentos
+                    interpessoais e no enfrentamento das dificuldades. A vida espiritual do crente não é invisível. Sua
+                    comunhão com Deus pode ser vista mediante seus frutos, suas ações. Atitudes e palavras que
+                    glorificam o nome do Senhor, independentemente das circunstâncias. Uma vida espiritual saudável leva
+                    a pessoa a agradar ao Senhor Jesus.
+                </p>
+                <br />
+                <p>
+                    <strong>2. A vida espiritual e suas tendências atuais.</strong> Nem todo crente vive de maneira
+                    bíblica, assim como nem toda prática espiritual agrada a Deus. O pensamento da sociedade atual tende
+                    a não aceitar o que é padrão, institucional e sólido, no entanto não rejeita e nem condena o que é
+                    espiritual desde que não esteja vinculado a uma instituição religiosa ou a uma crença específica.
+                    Nesse sentido, para o pensamento pós-moderno é possível ter experiências sobrenaturais com Deus, sem
+                    comprometer-se com Cristo, com os seus ensinamentos e com a sua Igreja. A vida espiritual atual
+                    tende a ser subjetiva e desprovida de preceitos bíblicos, o que deve ser rejeitado pelo crente, pois
+                    somente por meio de Cristo é que podemos nos achegar a Deus (Jo 14.6).
+                </p>
+                <br />
+                <p>
+                    <strong>3. A prática da espiritualidade. </strong> No livro de Gênesis, podemos ver o agir de Deus, nas
+                    expressões: “E disse Deus” (Gn 1.3,6,9,11,14,20,24,26,29). Em João 1.14 está escrito que “o Verbo se
+                    fez carne, e habitou entre nós, e vimos a sua glória, como a glória do unigênito do Pai, cheio de
+                    graça e de verdade”, mostrando a ação de Deus em conformidade com a sua Palavra. O Criador fala e
+                    age. A leitura da Palavra de Deus, a oração e o jejum são práticas espirituais saudáveis de um
+                    cristão genuíno, mas, elas devem ser acompanhadas de ações (Tg 1.22). A salvação é pela fé e não
+                    pelas obras, contudo, os salvos são chamados para as boas obras (Ef 2.8,9). Nos dias de Jeremias, as
+                    pessoas frequentavam o Templo e cumpriam os rituais litúrgicos determinados no Pentateuco, mas
+                    precisavam melhorar seus caminhos, suas ações, mediante o exercício da justiça, como o cuidado com
+                    os necessitados (Jr 7.4-7). Cuidar dos órfãos, das viúvas e dos necessitados não é uma pauta
+                    política, mas são ações ordenadas pelo Senhor (Tg 1.27). A vida cristã genuína e bíblica consiste em
+                    práticas que glorificam a Deus. A fé necessita ser prática.
+                </p>
+                <h3>III. AS CAUSAS E AS CONSEQUÊNCIAS DE UMA VIDA ESPIRITUAL VAZIA </h3>
+                <p>
+                    <strong>1. A triste realidade de uma vida espiritual vazia.</strong>Jeremias profetizou contra a
+                    vida espiritual do seu povo. A sua mensagem revelou o quanto isso entristeceu a Deus (Jr 26.12). O
+                    povo se firmava na estrutura do Templo que se tornou como uma espécie de “amuleto” e acabava se
+                    contentando com a ausência de Deus em suas reuniões. Essa atitude reafirma a inclinação humana de
+                    desejar criar um caminho próprio para se relacionar com Deus. Mesmo com todos os elementos
+                    necessários para a realização de um culto, a presença do Senhor é indispensável e insubstituível.
+                    Nos dias de Jesus este mesmo problema persistia, e foi com os escribas e fariseus que Ele travou os
+                    maiores embates. Ao repreender os líderes religiosos da sua época, Jesus afirmou que eles eram
+                    “sepulcros caiados” (Mt 23.26,27). Deus deve estar no centro de tudo.
+                </p>
+                <br />
+                <p>
+                    <strong>2. As causas e as consequências da vida cristã vazia. </strong> A vida cristã sem a
+                    aprovação e a presença de Deus é um perigo. Para o crente, o culto não é somente um ato litúrgico,
+                    ou uma obrigação religiosa, mas a sua oferta de louvor a Deus e o seu momento de comunhão com Ele
+                    (Rm 12.1). Uma vida cristã vazia é resultado de um coração distante de Deus. Quanto às suas
+                    consequências, elas são igualmente trágicas: perda do direito de habitar com Deus (7.13-15); não ter
+                    as orações ouvidas pelo Senhor (7.16) e a colheita de frutos da própria maldade (7.19,20). A vida
+                    cristã vazia, portanto, é um desvio da presença e da comunhão com o Eterno e deve ser evitada
+                    constantemente.
+                </p>
+                <br />
+                <p>
+                    <strong>3. Uma mensagem urgente e atual. </strong>Jeremias exerceu o seu ministério entre os anos
+                    627 e 586 a.C., mas a verdade de sua mensagem ainda ecoa na atualidade. A mensagem anunciada por
+                    Jeremias à porta do Templo em Jerusalém assume um papel de alerta em nossos dias. Infelizmente,
+                    muitos dizem estar conectados com Deus, mas sem frequentar o Templo, a Igreja do Senhor, tornando-se
+                    os “desigrejados”. Assim sendo, a mensagem de Jeremias na porta do Templo aponta o caminho para uma
+                    vida cristã saudável, com a frequência aos cultos e a comunhão com Deus e com os irmãos, rejeitando
+                    quaisquer excessos.
+                </p>
+                <br>
+                
+               
+               
+                <h3>Conclusão</h3>
+                <p>
+                    A dura mensagem de Jeremias aos líderes religiosos e aos frequentadores do Templo em Jerusalém
+                    revela que um crente pode trocar a verdadeira adoração pela falsa, e se perder mesmo estando dentro
+                    da Casa de Deus. Precisamos ter uma vida cristã saudável e equilibrada, na qual a nossa comunhão
+                    individual com Deus e coletiva, na Igreja, consiga caminhar juntas, resultando em uma prática que
+                    agrade a Deus.
+                </p>
+                <h3>Hora da Revisão</h3>
+                
+                    <p>1 - Segundo a lição, qual a missão recebida por Jeremias?</p>
+                    <p style="list-style: none; font-style: italic; font-size: 0.9em; color: darkgrey">
+                        Jeremias recebeu a missão de ir até Jerusalém se posicionar à porta do Templo e se pôr a gritar,
+                        anunciando a mensagem a todos que por ali passassem (7.1,2).
+                    </p>
+                    <p>2 - Qual mensagem deveria ser proclamada aos frequentadores do Templo?</p>
+                    <p style="list-style: none; font-style: italic; font-size: 0.9em; color: darkgrey">
+                        Jeremias recebeu a missão de ir até Jerusalém se posicionar à porta do Templo e se pôr a gritar,
+                        anunciando a mensagem a todos que por ali passassem (7.1,2).
+                    </p>
+                    <p>3 - Como deve ser a nossa adoração a Deus?</p>
+                    <p style="list-style: none; font-style: italic; font-size: 0.9em; color: darkgrey">
+                        Jeremias recebeu a missão de ir até Jerusalém se posicionar à porta do Templo e se pôr a gritar,
+                        anunciando a mensagem a todos que por ali passassem (7.1,2).
+                    </p>
+                    <p>4 - Quem Deus usou como um triste exemplo para Judá?</p>
+                    <p style="list-style: none; font-style: italic; font-size: 0.9em; color: darkgrey">
+                        Jeremias recebeu a missão de ir até Jerusalém se posicionar à porta do Templo e se pôr a gritar,
+                        anunciando a mensagem a todos que por ali passassem (7.1,2).
+                    </p>
+                    <p>5 - Qual a origem e significado da palavra “espiritualidade”?</p>
+                <p style="list-style: none; font-style: italic; font-size: 0.9em; color: darkgrey">
+                A palavra “espiritualidade”, vem do latim spitualitatem e indica o ato de valorizar o que é espiritual.
+                </p>
+            </section>
+        </main>
+        <footer>© 2025 — Todos os direitos reservados.</footer>
+        <script>
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+            toggle.addEventListener("click", () => menu.classList.toggle("active"));
+        </script>
+    </body>
+    <script>
+        document.querySelectorAll(".tooltip").forEach((tip) => {
+            const box = tip.querySelector(".tooltip-box");
+            let hideTimeout;
+
+            tip.addEventListener("mouseenter", () => {
+                clearTimeout(hideTimeout);
+                box.style.visibility = "visible";
+                box.style.opacity = "1";
+                box.style.transform = "translateX(-50%) translateY(-3px)";
+            });
+
+            tip.addEventListener("mouseleave", () => {
+                hideTimeout = setTimeout(() => {
+                    box.style.visibility = "hidden";
+                    box.style.opacity = "0";
+                    box.style.transform = "translateX(-50%) translateY(0)";
+                }, 300); // <- tempo de permanência em ms (pode ajustar)
+            });
+
+            box.addEventListener("mouseenter", () => {
+                clearTimeout(hideTimeout);
+                box.style.visibility = "visible";
+                box.style.opacity = "1";
+            });
+
+            box.addEventListener("mouseleave", () => {
+                hideTimeout = setTimeout(() => {
+                    box.style.visibility = "hidden";
+                    box.style.opacity = "0";
+                }, 200);
+            });
+        });
+    </script>
+</html>
