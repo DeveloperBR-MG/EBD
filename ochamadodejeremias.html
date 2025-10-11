@@ -6,194 +6,194 @@
   <meta name="description" content="Modelo base de site responsivo" />
   <title>O Chamado de Jeremias</title>
 
-  <style>
-    * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                text-align: justify;
-            }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: justify;
+        }
 
-            body {
-                font-family: "Poppins", sans-serif;
-                color: #222;
-                background-color: #f9f9f9;
-                line-height: 1.6;
-            }
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #222;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
 
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-            header {
-                background: linear-gradient(90deg, #007aff, #00c3ff);
-                color: white;
-                padding: 15px 20px;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
+        header {
+            background: linear-gradient(90deg, #007aff, #00c3ff);
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            header h1 {
-                font-size: 1.4rem;
-                letter-spacing: 1px;
-            }
-           
+        header h1 {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li:hover {
+            opacity: 0.8;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
             nav ul {
-                list-style: none;
-                display: flex;
-                gap: 20px;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #007aff;
+                width: 200px;
+                height: 0;
+                overflow: hidden;
+                flex-direction: column;
+                align-items: center;
+                transition: height 0.3s ease;
             }
 
-            nav ul li:hover {
-                opacity: 0.8;
+            nav ul.active {
+                height: 150px;
             }
 
             .menu-toggle {
-                display: none;
-                flex-direction: column;
-                cursor: pointer;
-                gap: 5px;
+                display: flex;
             }
+        }
 
-            .menu-toggle div {
-                width: 25px;
-                height: 3px;
-                background: white;
-            }
+        main {
+            padding: 100px 20px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-            @media (max-width: 768px) {
-                nav ul {
-                    position: absolute;
-                    top: 60px;
-                    right: 0;
-                    background: #007aff;
-                    width: 200px;
-                    height: 0;
-                    overflow: hidden;
-                    flex-direction: column;
-                    align-items: center;
-                    transition: height 0.3s ease;
-                }
+        section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
 
-                nav ul.active {
-                    height: 150px;
-                }
+        h2 {
+            color: #007bff;
+            border-left: 5px solid #00b4ff;
+            padding-left: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
 
-                .menu-toggle {
-                    display: flex;
-                }
-            }
+        h3 {
+            margin-top: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            text-align: center;
+            background-color: antiquewhite;
+        }
 
-            main {
-                padding: 100px 20px 60px;
-                max-width: 1000px;
-                margin: 0 auto;
-            }
+        ul {
+            margin-left: 20px;
+        }
 
-            section {
-                margin-bottom: 40px;
-                background: white;
-                padding: 25px;
-                border-radius: 12px;
-                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            }
+        li {
+            margin-bottom: 5px;
+        }
 
-            h2 {
-                color: #007bff;
-                border-left: 5px solid #00b4ff;
-                padding-left: 10px;
-                font-size: 1.4rem;
-                margin-bottom: 10px;
-            }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
 
-            h3 {
-                margin-top: 20px;
-                color: #333;
-                font-size: 1.1rem;
-                text-align: center;
-                background-color: antiquewhite;
-            }
+        .destaque {
+            color: red;
+        }
 
-            ul {
-                margin-left: 20px;
-            }
+        /* ===== Tooltip corrigido ===== */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
 
-            li {
-                margin-bottom: 5px;
-            }
+        .tooltip .tooltip-trigger {
+            cursor: pointer;
+            color: #0077cc;
+            border-bottom: 2px dashed #00aaff;
+        }
 
-            footer {
-                text-align: center;
-                padding: 20px;
-                background: #222;
-                color: #aaa;
-                font-size: 0.9rem;
-            }
-
-            .destaque {
-                color: red;
-            }
-
-            /* ===== Tooltip corrigido ===== */
-            .tooltip {
-                position: relative;
-                display: inline-block;
-            }
-
-            .tooltip .tooltip-trigger {
-                cursor: pointer;
-                color: #0077cc;
-                border-bottom: 2px dashed #00aaff;
-            }
-
-            .tooltip .tooltip-box {
-                font-size: 0.8em;
-                position: absolute;
-                bottom: 125%;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 340px;
-                background: rgba(20, 20, 20, 0.95);
-                color: #fff;
-                border-radius: 8px;
-                padding: 10px;
-                text-align: left;
-                visibility: hidden;
-                opacity: 0;
-                transition:
+        .tooltip .tooltip-box {
+            font-size: 0.8em;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 340px;
+            background: rgba(11, 46, 75, 0.95);
+            color: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: left;
+            visibility: hidden;
+            opacity: 0;
+            transition:
                     opacity 0.3s ease,
                     transform 0.2s ease;
-                z-index: 100;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-                max-height: 200px;
-                overflow-y: auto;
-            }
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(11, 46, 75, 0.95);
+            max-height: 200px;
+            overflow-y: auto;
+        }
 
-            .tooltip .tooltip-box::after {
-                content: "";
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                margin-left: -5px;
-                border-width: 6px;
-                border-style: solid;
-                border-color: rgba(20, 20, 20, 0.95) transparent transparent transparent;
-            }
+        .tooltip .tooltip-box::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: rgba(11, 46, 75, 0.95); transparent: transparent transparent;
+        }
 
-            .tooltip:hover .tooltip-box,
-            .tooltip .tooltip-box:hover {
-                visibility: visible;
-                opacity: 1;
-                transform: translateX(-50%) translateY(-3px);
-            }
-  </style>
+        .tooltip:hover .tooltip-box,
+        .tooltip .tooltip-box:hover {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(-3px);
+        }
+    </style>
 </head>
 
 <body>
