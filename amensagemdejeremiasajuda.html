@@ -15,9 +15,13 @@
             text-align: justify;
         }
 
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* ✅ Impede rolagem lateral */
+        }
+
         body {
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-
             color: #504e4e;
             background-color: #f9f9f9;
             line-height: 1.6;
@@ -113,7 +117,6 @@
             padding-left: 10px;
             font-size: 1.4rem;
             margin-bottom: 10px;
-            background: var(--bg);
         }
 
         h3 {
@@ -162,7 +165,7 @@
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%);
-            width: 340px;
+            max-width: 90vw; /* ✅ se adapta à tela */
             background: rgba(11, 46, 75, 0.95);
             color: #fff;
             border-radius: 8px;
@@ -170,13 +173,13 @@
             text-align: left;
             visibility: hidden;
             opacity: 0;
-            transition:
-                    opacity 0.3s ease,
-                    transform 0.2s ease;
+            transition: opacity 0.3s ease, transform 0.2s ease;
             z-index: 100;
             box-shadow: 0 4px 10px rgba(11, 46, 75, 0.95);
             max-height: 200px;
             overflow-y: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .tooltip .tooltip-box::after {
@@ -184,10 +187,10 @@
             position: absolute;
             top: 100%;
             left: 50%;
-            margin-left: -5px;
+            transform: translateX(-50%);
             border-width: 6px;
             border-style: solid;
-            border-color: rgba(11, 46, 75, 0.95); transparent: transparent transparent;
+            border-color: rgba(11, 46, 75, 0.95) transparent transparent transparent; /* ✅ corrigido */
         }
 
         .tooltip:hover .tooltip-box,
@@ -197,6 +200,7 @@
             transform: translateX(-50%) translateY(-3px);
         }
     </style>
+
 </head>
 
 <body>
