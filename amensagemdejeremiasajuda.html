@@ -193,6 +193,20 @@
                 opacity: 1;
                 transform: translateX(-50%) translateY(-3px);
             }
+            html, body {
+    overflow-x: hidden; /* impede scroll lateral */
+    width: 100%;
+}
+
+header, main, footer {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.tooltip .tooltip-box {
+    max-width: 90vw; /* ajusta automaticamente à tela */
+    word-wrap: break-word;
+}
         </style>
     </head>
     <body>
