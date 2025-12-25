@@ -19,7 +19,7 @@ body {
 
 .player {
     width: 320px;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.5);
     border-radius: 20px;
     padding: 20px;
     text-align: center;
@@ -31,6 +31,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* Equalizador */
 .equalizer {
     display: flex;
     justify-content: center;
@@ -48,11 +49,11 @@ body {
     animation-play-state: paused;
 }
 
-.bar:nth-child(1){animation-delay:0s}
-.bar:nth-child(2){animation-delay:.1s}
-.bar:nth-child(3){animation-delay:.2s}
-.bar:nth-child(4){animation-delay:.3s}
-.bar:nth-child(5){animation-delay:.4s}
+.bar:nth-child(1) { animation-delay: 0s; }
+.bar:nth-child(2) { animation-delay: .1s; }
+.bar:nth-child(3) { animation-delay: .2s; }
+.bar:nth-child(4) { animation-delay: .3s; }
+.bar:nth-child(5) { animation-delay: .4s; }
 
 @keyframes bounce {
     0% { height: 10px; }
@@ -60,7 +61,9 @@ body {
     100% { height: 10px; }
 }
 
+/* Botão */
 button {
+    background: #00f260;
     background: linear-gradient(45deg, #00f260, #0575e6);
     border: none;
     color: #fff;
@@ -68,6 +71,11 @@ button {
     font-size: 16px;
     border-radius: 30px;
     cursor: pointer;
+    transition: transform .2s;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 </style>
 </head>
@@ -77,7 +85,7 @@ button {
 <div class="player">
     <h1>🎶 Radio Gospel Music</h1>
 
-    <div class="equalizer">
+    <div class="equalizer" id="equalizer">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
@@ -85,9 +93,9 @@ button {
         <div class="bar"></div>
     </div>
 
-    <button id="btn">▶ Ouvir Rádio</button>
+    <button onclick="togglePlay()">▶ Ouvir Rádio</button>
 
-    <audio id="radio" preload="none">
+    <audio id="radio">
         <source src="https://uk25freenew.listen2myradio.com/live.mp3?typeportmount=s1_3428_stream_144211309" type="audio/mpeg">
     </audio>
 </div>
@@ -95,27 +103,19 @@ button {
 <script>
 const radio = document.getElementById("radio");
 const bars = document.querySelectorAll(".bar");
-const btn = document.getElementById("btn");
+const button = document.querySelector("button");
 
-btn.addEventListener("click", () => {
-
+function togglePlay() {
     if (radio.paused) {
-        radio.load(); // 🔑 importante para Firefox
-
-        radio.play().then(() => {
-            btn.textContent = "⏸ Pausar";
-            bars.forEach(b => b.style.animationPlayState = "running");
-        }).catch(err => {
-            alert("Clique novamente para iniciar o áudio");
-            console.log(err);
-        });
-
+        radio.play();
+        button.textContent = "⏸ Pausar";
+        bars.forEach(bar => bar.style.animationPlayState = "running");
     } else {
         radio.pause();
-        btn.textContent = "▶ Ouvir Rádio";
-        bars.forEach(b => b.style.animationPlayState = "paused");
+        button.textContent = "▶ Ouvir Rádio";
+        bars.forEach(bar => bar.style.animationPlayState = "paused");
     }
-});
+}
 </script>
 
 </body>
