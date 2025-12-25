@@ -3,80 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rádio Gospel Music | Louvores e Música Cristã 24h</title>
-
-<meta name="description" content="Rádio Gospel Music ao vivo com louvores, adoração e música cristã 24 horas por dia. Ouça online gratuitamente.">
-<meta name="keywords" content="rádio gospel, música gospel, louvor, adoração, rádio cristã online">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Rádio Gospel Music">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Rádio Gospel Music - Louvores 24h">
-<meta property="og:description" content="Ouça a Rádio Gospel Music com música cristã e louvores ao vivo.">
-<meta property="og:image" content="img.png">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Rádio Gospel Music">
-<meta name="twitter:description" content="Rádio Gospel Music com louvores e música cristã 24h.">
-<meta name="twitter:image" content="img.png">
-
-<!-- DADOS ESTRUTURADOS (SCHEMA) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RadioStation",
-  "name": "Rádio Gospel Music",
-  "url": "https://SEUSITEAQUI.com",
-  "logo": "https://SEUSITEAQUI.com/img.png",
-  "sameAs": [
-    "https://www.facebook.com/suapagina",
-    "https://www.instagram.com/suapagina"
-  ],
-  "description": "Rádio Gospel Music com louvores, adoração e música cristã ao vivo 24 horas."
-}
-</script>
+<title>Radio Gospel Music</title>
 
 <style>
-/* (mantive seu estilo, sem alterar SEO) */
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.player {
+    width: 320px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.player h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Equalizador */
+.equalizer {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    height: 50px;
+    margin: 15px 0;
+}
+
+.bar {
+    width: 8px;
+    height: 10px;
+    background: linear-gradient(180deg, #00f260, #0575e6);
+    border-radius: 5px;
+    animation: bounce 1s infinite ease-in-out;
+    animation-play-state: paused;
+}
+
+.bar:nth-child(1) { animation-delay: 0s; }
+.bar:nth-child(2) { animation-delay: .1s; }
+.bar:nth-child(3) { animation-delay: .2s; }
+.bar:nth-child(4) { animation-delay: .3s; }
+.bar:nth-child(5) { animation-delay: .4s; }
+
+@keyframes bounce {
+    0% { height: 10px; }
+    50% { height: 50px; }
+    100% { height: 10px; }
+}
+
+/* Botão */
+button {
+    background: #00f260;
+    background: linear-gradient(45deg, #00f260, #0575e6);
+    border: none;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Rádio Gospel Music</h1>
-</header>
+<div class="player">
+    <h1>🎶 Radio Gospel Music</h1>
 
-<main class="player">
+    <div class="equalizer" id="equalizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
 
-  <img src="img.png" alt="Rádio Gospel Music - música gospel ao vivo">
+    <button onclick="togglePlay()">▶ Ouvir Rádio</button>
 
-  <p>
-    A <strong>Rádio Gospel Music</strong> transmite louvores, adoração e
-    música cristã ao vivo 24 horas por dia, levando a Palavra de Deus
-    através da música.
-  </p>
-
-  <button onclick="togglePlay()">▶ Ouvir Rádio</button>
-
-  <audio id="radio">
-    <source src="https://uk25freenew.listen2myradio.com/live.mp3?typeportmount=s1_3428_stream_144211309" type="audio/mpeg">
-  </audio>
-
-</main>
-
-<footer>
-  <p>© 2025 Rádio Gospel Music – Todos os direitos reservados.</p>
-</footer>
+    <audio id="radio">
+        <source src="https://uk25freenew.listen2myradio.com/live.mp3?typeportmount=s1_3428_stream_144211309" type="audio/mpeg">
+    </audio>
+</div>
 
 <script>
 const radio = document.getElementById("radio");
+const bars = document.querySelectorAll(".bar");
+const button = document.querySelector("button");
+
 function togglePlay() {
-  radio.paused ? radio.play() : radio.pause();
+    if (radio.paused) {
+        radio.play();
+        button.textContent = "⏸ Pausar";
+        bars.forEach(bar => bar.style.animationPlayState = "running");
+    } else {
+        radio.pause();
+        button.textContent = "▶ Ouvir Rádio";
+        bars.forEach(bar => bar.style.animationPlayState = "paused");
+    }
 }
 </script>
 
